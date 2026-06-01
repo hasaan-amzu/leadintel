@@ -158,33 +158,93 @@ function SampleOutput() {
     {
       name: "Sarah Chen",
       company: "TechVault Solutions",
-      industry: "Cloud Infrastructure (DevOps/SRE)",
+      email: "s.chen@techvault.io",
+      linkedin: "linkedin.com/in/sarahchen-tv",
+      headline: "VP Engineering @ TechVault Solutions | Cloud Infrastructure | Ex-AWS",
+      about: "Building the next generation of cloud management tools. Passionate about DevOps, SRE, and making infrastructure invisible for mid-market teams.",
+      topPosts: "Multi-cloud complexity is real — we just shipped unified monitoring across all 3 major providers. Also hiring 12 senior SREs.",
+      postEngagement: "142 reactions, 23 comments avg",
       whatTheyDo: "Cloud-native infrastructure management for mid-market SaaS companies. Monitoring, optimization, and security across AWS, GCP, and Azure.",
+      industry: "Cloud Infrastructure (DevOps/SRE)",
+      keyOfferings: "CloudWatch Pro, Multi-Cloud Dashboard, Infrastructure Audit, Cost Optimizer",
+      sizeStage: "Series B, ~120 employees",
       priorities: "Scaling engineering team for enterprise customers, maintaining 99.99% SLA, expanding multi-cloud Azure support.",
+      responsibilities: "Leading 45-person engineering org, overseeing cloud platform reliability, driving enterprise product roadmap.",
       pain: "Engineering hiring bottleneck limiting product velocity",
       evidence: "LinkedIn posts mention 12 open engineering roles. Careers page shows positions open 60+ days.",
       confidence: 9,
+      dataGaps: "Exact ARR not publicly disclosed. Specific customer count unknown.",
+      sourceUrl: "techvault.io/about",
     },
     {
       name: "Marcus Rivera",
       company: "GreenPath Logistics",
-      industry: "Sustainable Last-Mile Logistics",
+      email: "m.rivera@greenpath.co",
+      linkedin: "linkedin.com/in/marcusrivera",
+      headline: "COO @ GreenPath Logistics | Sustainable Last-Mile | Ex-FedEx",
+      about: "Rethinking urban delivery with electric vehicles. Zero-emission logistics is not just possible — it's profitable.",
+      topPosts: "Excited to announce we hit 15 metros! Fleet maintenance is our biggest scaling challenge right now.",
+      postEngagement: "89 reactions, 15 comments avg",
       whatTheyDo: "Electric vehicle-based last-mile delivery network serving e-commerce brands. Carbon-neutral shipping with same-day delivery in 15 metros.",
+      industry: "Sustainable Last-Mile Logistics",
+      keyOfferings: "Same-Day EV Delivery, Carbon-Neutral Shipping, Enterprise Logistics API, Route Optimizer",
+      sizeStage: "Series A, ~80 employees",
       priorities: "Expanding to 10 new metros, reducing per-package cost by 15%, securing enterprise e-commerce contracts.",
+      responsibilities: "Overseeing fleet operations across 15 metros, managing driver workforce, optimizing delivery routing and unit economics.",
       pain: "Fleet maintenance costs escalating with rapid EV expansion",
       evidence: "Q3 investor update: vehicle maintenance costs exceeded projections by 22%.",
       confidence: 8,
+      dataGaps: "Exact fleet size and per-metro economics not disclosed. Funding amount unconfirmed.",
+      sourceUrl: "greenpath.co/about",
     },
     {
       name: "Dr. Priya Nair",
       company: "MindBridge Health",
-      industry: "Digital Mental Health / Health Tech",
+      email: "p.nair@mindbridge.health",
+      linkedin: "linkedin.com/in/drpriyanair",
+      headline: "CEO & Co-founder @ MindBridge Health | Digital Mental Health | Clinical Psychologist",
+      about: "Bridging the therapist gap with technology. Making quality mental healthcare accessible to every employee, everywhere.",
+      topPosts: "The provider shortage is a crisis — our patients wait 2-3 weeks. We're investing heavily in our AI matching engine to help.",
+      postEngagement: "215 reactions, 41 comments avg",
       whatTheyDo: "AI-powered therapist matching platform. Serves both B2C (direct patients) and B2B (employer mental health benefits).",
+      industry: "Digital Mental Health / Health Tech",
+      keyOfferings: "AI Therapist Matching, Employer Benefits Platform, Patient Self-Service Portal",
+      sizeStage: "Series A, ~45 employees",
       priorities: "Securing Series B, scaling B2B employer benefits channel, achieving HITRUST certification.",
+      responsibilities: "Setting company vision, leading fundraising, managing clinical advisory board, overseeing B2B enterprise sales.",
       pain: "Therapist supply shortage creating 2-3 week patient wait times",
       evidence: "LinkedIn post: 'the provider shortage is a crisis — our patients wait 2-3 weeks.' 25 open therapist positions.",
       confidence: 8,
+      dataGaps: "Patient volume metrics and B2B client count not publicly available.",
+      sourceUrl: "mindbridge.health/about",
     },
+  ];
+
+  const groups = [
+    { label: "Lead Info", colSpan: 4, bg: "bg-[#D6E4F0]" },
+    { label: "LinkedIn Intel", colSpan: 4, bg: "bg-[#DDE8F0]" },
+    { label: "Company Snapshot", colSpan: 4, bg: "bg-[#E2EFDA]" },
+    { label: "Prospect Role", colSpan: 2, bg: "bg-[#FCE4D6]" },
+    { label: "Pain Signals", colSpan: 2, bg: "bg-[#FFF2CC]" },
+    { label: "Meta", colSpan: 3, bg: "bg-[#F2F2F2]" },
+  ];
+
+  const headers = [
+    "Name", "Company", "Email", "LinkedIn",
+    "Headline", "About", "Top Posts", "Post Engagement",
+    "What They Do", "Industry", "Key Offerings", "Size & Stage",
+    "Likely Priorities", "Key Responsibilities",
+    "Pain Signal", "Evidence",
+    "Confidence", "Data Gaps", "Source URL",
+  ];
+
+  const fieldKeys: (keyof typeof sampleData[0])[] = [
+    "name", "company", "email", "linkedin",
+    "headline", "about", "topPosts", "postEngagement",
+    "whatTheyDo", "industry", "keyOfferings", "sizeStage",
+    "priorities", "responsibilities",
+    "pain", "evidence",
+    "confidence", "dataGaps", "sourceUrl",
   ];
 
   return (
@@ -197,52 +257,79 @@ function SampleOutput() {
           Here&apos;s what your Excel report looks like — real research, not generic filler.
         </p>
 
-        <div className="mt-10 overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
-          <table className="w-full min-w-[900px] text-left text-xs">
-            <thead>
-              <tr>
-                <th colSpan={2} className="bg-[#D6E4F0] px-3 py-2 text-center text-[11px] font-semibold text-[#1F4E79]">Lead Info</th>
-                <th colSpan={2} className="bg-[#E2EFDA] px-3 py-2 text-center text-[11px] font-semibold text-[#1F4E79]">Company Snapshot</th>
-                <th className="bg-[#FCE4D6] px-3 py-2 text-center text-[11px] font-semibold text-[#1F4E79]">Prospect Role</th>
-                <th colSpan={2} className="bg-[#FFF2CC] px-3 py-2 text-center text-[11px] font-semibold text-[#1F4E79]">Pain Signals</th>
-                <th className="bg-[#F2F2F2] px-3 py-2 text-center text-[11px] font-semibold text-[#1F4E79]">Meta</th>
-              </tr>
-              <tr className="bg-[#1F4E79] text-white">
-                <th className="px-3 py-2 font-medium">Name</th>
-                <th className="px-3 py-2 font-medium">Company</th>
-                <th className="px-3 py-2 font-medium">What They Do</th>
-                <th className="px-3 py-2 font-medium">Industry</th>
-                <th className="px-3 py-2 font-medium">Likely Priorities</th>
-                <th className="px-3 py-2 font-medium">Pain Signal</th>
-                <th className="px-3 py-2 font-medium">Evidence</th>
-                <th className="px-3 py-2 font-medium text-center">Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sampleData.map((d, i) => (
-                <tr key={d.name} className={i % 2 === 1 ? "bg-gray-50" : "bg-white"}>
-                  <td className="px-3 py-3 font-medium text-gray-900 align-top">{d.name}</td>
-                  <td className="px-3 py-3 text-gray-700 align-top">{d.company}</td>
-                  <td className="px-3 py-3 text-gray-600 align-top max-w-[200px]">{d.whatTheyDo}</td>
-                  <td className="px-3 py-3 text-gray-600 align-top">{d.industry}</td>
-                  <td className="px-3 py-3 text-gray-600 align-top max-w-[180px]">{d.priorities}</td>
-                  <td className="px-3 py-3 text-gray-700 align-top max-w-[180px] font-medium">{d.pain}</td>
-                  <td className="px-3 py-3 text-gray-500 align-top max-w-[200px] italic">{d.evidence}</td>
-                  <td className="px-3 py-3 text-center align-top">
-                    <span className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
-                      d.confidence >= 8 ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
-                    }`}>
-                      {d.confidence}
-                    </span>
-                  </td>
+        <div className="relative mt-10">
+          <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+            <table className="text-left text-xs" style={{ minWidth: "2400px" }}>
+              <thead>
+                <tr>
+                  {groups.map((g) => (
+                    <th
+                      key={g.label}
+                      colSpan={g.colSpan}
+                      className={`${g.bg} px-3 py-2 text-center text-[11px] font-semibold text-[#1F4E79]`}
+                    >
+                      {g.label}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+                <tr className="bg-[#1F4E79] text-white">
+                  {headers.map((h) => (
+                    <th key={h} className="px-3 py-2 font-medium whitespace-nowrap">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {sampleData.map((d, i) => (
+                  <tr key={d.name} className={i % 2 === 1 ? "bg-gray-50" : "bg-white"}>
+                    {fieldKeys.map((key, ci) => {
+                      const val = String(d[key] ?? "");
+                      const isConfidence = key === "confidence";
+                      const isEvidence = key === "evidence";
+                      const isPain = key === "pain";
+                      const isLink = key === "linkedin" || key === "sourceUrl";
+                      const isEmpty = !val || val === "0";
+
+                      if (isConfidence) {
+                        const score = Number(val);
+                        return (
+                          <td key={ci} className="px-3 py-3 text-center align-top">
+                            <span className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
+                              score >= 8 ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
+                            }`}>
+                              {score}
+                            </span>
+                          </td>
+                        );
+                      }
+
+                      return (
+                        <td
+                          key={ci}
+                          className={`px-3 py-3 align-top ${
+                            ci === 0 ? "font-medium text-gray-900" :
+                            isPain && val ? "font-medium text-gray-700" :
+                            isEvidence ? "italic text-gray-500" :
+                            isLink && val ? "text-blue-600 underline" :
+                            isEmpty ? "text-gray-300" :
+                            "text-gray-600"
+                          }`}
+                          style={{ minWidth: ci < 4 ? "130px" : "180px", maxWidth: "260px" }}
+                        >
+                          {isEmpty ? "—" : val}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-center text-sm text-gray-400">
+            ← Scroll to see all 19 columns →
+          </p>
         </div>
-        <p className="mt-4 text-center text-xs text-gray-400">
-          Showing 3 of 26 columns. Full report includes LinkedIn intel, key offerings, additional pain signals with evidence, data gaps, and source URLs.
-        </p>
       </div>
     </section>
   );
