@@ -553,7 +553,7 @@ export default function OrderPage() {
 
         <p className="mt-4 text-center text-xs text-gray-400">
           Secure payment powered by Stripe. Your report will be emailed within
-          30 minutes.
+          1 hour.
         </p>
       </div>
     </div>
