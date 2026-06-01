@@ -19,7 +19,7 @@ No accounts, no dashboards, no history. Every visit is a fresh transaction.
 | **Resend** | Free: 100 emails/day, 3K/month. Pro: $20/mo for 50K | https://resend.com/pricing |
 | **GCP Cloud Run** | $0.000024/vCPU-sec. Free tier: 180K vCPU-sec/mo | https://cloud.google.com/run/pricing |
 
-### Actual Cost Per Lead (measured from 3-lead test run dashboards)
+### Actual Cost Per Lead (measured from 3-lead test run dashboards, 2026-05-25)
 
 | Service | Measured usage per lead | Calculation | Cost per lead |
 |---------|------------------------|-------------|---------------|
@@ -49,5 +49,10 @@ No accounts, no dashboards, no history. Every visit is a fresh transaction.
 | 25 leads | $1.35 |
 | 50 leads | $2.70 |
 | 100 leads | $5.40 |
+
+> **Dominant cost:** Apify LinkedIn scraping is 68% of total ($0.037/lead).
+> Without LinkedIn, cost drops to $0.017/lead.
+> OpenAI is the second largest at 26% ($0.014/lead).
+> Retail pricing to be set by Hasaan after reviewing this breakdown.
 
 ---
